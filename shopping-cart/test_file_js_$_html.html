@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Card making test file</title>
+</head>
+
+<body>
+    <span id="plus">+</span>
+    <input type="text" id="text" value="1" />
+    <span id="minus">-</span>
+
+
+    <div class="cost">Price: $<span id="price">10</span></div>
+    <script>
+        const plus = document.getElementById('plus');
+        plus.addEventListener('click', function() {
+            let inputNumber = getInput('text');
+            inputNumber += 1;
+            document.getElementById("text").value = inputNumber;
+            let price = getText('price');
+            price = inputNumber * 10;
+            document.getElementById('price').innerText = price;
+        })
+
+
+        const minus = document.getElementById('minus');
+
+        minus.addEventListener('click', function() {
+            let inputNumber = getInput('text');
+            if (inputNumber >= 1) {
+                inputNumber -= 1;
+                document.getElementById("text").value = inputNumber;
+                let price = getText('price');
+                price = inputNumber * 10;
+                document.getElementById('price').innerText = price;
+            }
+
+        })
+
+
+        function getInput(id) {
+            let textBox = document.getElementById(id).value;
+            let inputNumber = parseFloat(textBox);
+            return inputNumber;
+        }
+
+        function getText(id) {
+            let textBox = document.getElementById(id).innerText;
+            let inputNumber = parseFloat(textBox);
+            return inputNumber;
+        }
+    </script>
+</body>
+
+</html>
