@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor Bank</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- login section -->
+    <section class="login" id="loginSection">
+
+        <h3 class="text-center mt-5">Welcome to Bachelor Bank</h3>
+        <div class="login-system shadow p-3 mb-5 bg-white rounded mt-5" style="width: 60%; margin: auto;">
+            <form class="container-fluid" s>
+                <h3>Login</h3>
+                <div class="form-group mt-3">
+
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Please Enter Your Email Address">
+                </div>
+                <div class="form-group mt-3">
+
+                    <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Please Enter Your Password">
+                    <button id="login" class="btn btn-success mt-3 custome-btn-padding" type="button">Enter</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+
+
+
+    <section id='transaction' class="container">
+        <h3 class="text-center">Transaction Area</h3>
+        <div class="container overflow-hidden">
+
+            <!-- information showing section -->
+            <div class="row gx-3">
+                <div class="col-md-4 ">
+                    <div class="deposit sub-class">
+                        <h5>Deposit</h5>
+                        <h2>$ <span id="currentDeposit">00</span></h2>
+                    </div>
+
+                </div>
+                <div class="col-md-4 ">
+                    <div class="withdraw sub-class">
+                        <h5>Withdraw</h5>
+                        <h2>$ <span id="currentWithdraw">00</span></h2>
+                    </div>
+
+                </div>
+                <div class="col-md-4 ">
+                    <div class="balance sub-class">
+                        <h5>Balance</h5>
+                        <h2>$ <span id="currentBalance">300</span> </h2>
+                    </div>
+
+                </div>
+            </div>
+            <!-- information showing section -->
+
+
+            <!-- input getting section -->
+            <div class="row gx-5 mt-5">
+                <div class="d-flex justify-content-between">
+
+                    <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+                        <h4>Deposit</h4>
+                        <input id="depositAmount" type="number" class="form-control" placeholder="$ Amount You want to Deposit">
+                        <button id="deposit" class="btn btn-success custome-btn-padding mt-4">Deposit</button>
+                    </div>
+                    <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+                        <h4>Withdraw</h4>
+                        <input type="number" id="inputWithdraw" class="form-control" placeholder="$ Amount You want to Withdraw">
+                        <button id="withdraw" class="btn btn-success custome-btn-padding mt-4">Withdraw</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

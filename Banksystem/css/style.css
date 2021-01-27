@@ -1,0 +1,30 @@
+.custome-btn-padding {
+    padding: 5px 15px;
+}
+
+#transaction {
+    display: none;
+    margin-top: 50px;
+}
+
+.deposit {
+    background-color: slateblue;
+}
+
+.withdraw {
+    background-color: lightsalmon;
+}
+
+.balance {
+    background-color: orange;
+}
+
+.sub-class {
+    color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+
+.col-md-6 {
+    width: 45% !important;
+}
