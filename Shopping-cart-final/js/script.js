@@ -6,10 +6,6 @@ minus.addEventListener('click', function() {
         document.getElementById('text').value = inputNumber;
         let inputPrice = inputNumber * 1219;
         document.getElementById('iphone').innerHTML = inputPrice;
-
-
-
-
     }
     totalCost();
 })
@@ -24,10 +20,7 @@ plus.addEventListener('click', function() {
     inputPrice = inputNumber * 1219;
     document.getElementById('iphone').innerHTML = inputPrice;
 
-
-
     totalCost();
-
 })
 
 
@@ -39,12 +32,9 @@ minusOne.addEventListener('click', function() {
         inputNumber -= 1;
         document.getElementById('textOne').value = inputNumber;
 
-
         let inputPrice = getInputText('iphoneOne');
         inputPrice = inputNumber * 59;
         document.getElementById('iphoneOne').innerHTML = inputPrice;
-
-
     }
 
     totalCost()
@@ -61,7 +51,6 @@ plusOne.addEventListener('click', function() {
     inputPrice = inputNumber * 59;
     document.getElementById('iphoneOne').innerHTML = inputPrice;
 
-
     totalCost()
 })
 
@@ -75,14 +64,7 @@ function totalCost() {
 
     let subTotalPrice = phonePrice + coverPrice;
 
-    document.getElementById('subTotal').innerHTML = subTotalPrice;
-    let taxAmount = taxCalculation(subTotalPrice);
-    document.getElementById('tax').innerHTML = taxAmount;
-
-
-    let totalCost = getInputText('total');
-    totalCost = subTotalPrice + taxAmount;
-    document.getElementById('total').innerHTML = totalCost;
+    summary(subTotalPrice);
 
 }
 
@@ -105,4 +87,49 @@ function getInputText(id) {
     const text = document.getElementById(id).innerText;
     let inputNumber = parseFloat(text);
     return inputNumber;
+}
+let removeItem = document.getElementById('removePhone');
+removeItem.addEventListener('click', function() {
+    const phoneItem = document.getElementById('phoneItem');
+    phoneItem.style.display = 'none';
+
+
+    let phonePrice = getInputText('iphone');
+    document.getElementById('iphone').innerHTML = 0;
+
+    let coverPrice = getInputText('iphoneOne');
+    document.getElementById('iphoneOne').innerHTML = coverPrice;
+
+
+    let subTotalPrice = 0 + coverPrice;
+
+    summary(subTotalPrice);
+})
+
+let removeCover = document.getElementById('removeCover');
+removeCover.addEventListener('click', function() {
+    const phoneItem = document.getElementById('coverItem');
+    phoneItem.style.display = 'none';
+
+
+    let phonePrice = getInputText('iphone');
+    document.getElementById('iphone').innerHTML = phonePrice;
+
+    let coverPrice = getInputText('iphoneOne');
+    document.getElementById('iphoneOne').innerHTML = 0;
+
+    let subTotalPrice = phonePrice + 0;
+
+    summary(subTotalPrice);
+})
+
+function summary(price) {
+
+    document.getElementById('subTotal').innerHTML = price;
+    let taxAmount = taxCalculation(price);
+    document.getElementById('tax').innerHTML = taxAmount;
+
+    let totalCost = getInputText('total');
+    totalCost = price + taxAmount;
+    document.getElementById('total').innerHTML = totalCost;
 }
