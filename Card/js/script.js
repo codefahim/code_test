@@ -9,55 +9,19 @@ const iphoneOne = document.getElementById('iphoneOne');
 
 
 minus.addEventListener('click', function() {
-    let inputNumber = getInputNumber('text');
-    if (inputNumber >= 1) {
-        inputNumber--;
-        document.getElementById('text').value = inputNumber;
-
-
-        let phonePrice = getInputText('iphone');
-        phonePrice = inputNumber * 1219;
-        document.getElementById('iphone').innerText = phonePrice;
-    }
+    handlePhonePrice(false);
     total();
 })
-
 plus.addEventListener('click', function() {
-    let inputNumber = getInputNumber('text');
-    inputNumber++;
-    document.getElementById('text').value = inputNumber;
-
-
-    let phonePrice = getInputText('iphone');
-    phonePrice = inputNumber * 1219;
-    document.getElementById('iphone').innerText = phonePrice;
+    handlePhonePrice(true);
     total();
 })
-
-
 minusOne.addEventListener('click', function() {
-    let inputNumber = getInputNumber('textOne');
-    if (inputNumber >= 1) {
-        inputNumber--;
-        document.getElementById('textOne').value = inputNumber;
-
-
-        let casePrice = getInputText('iphoneOne');
-        casePrice = inputNumber * 59;
-        document.getElementById('iphoneOne').innerText = casePrice;
-    }
+    handleCoverPrice(false);
     total();
 })
-
 plusOne.addEventListener('click', function() {
-    let inputNumber = getInputNumber('textOne');
-    inputNumber++;
-    document.getElementById('textOne').value = inputNumber;
-
-
-    let casePrice = getInputText('iphoneOne');
-    casePrice = inputNumber * 59;
-    document.getElementById('iphoneOne').innerText = casePrice;
+    handleCoverPrice(true);
     total();
 })
 
@@ -100,4 +64,42 @@ function taxCalculation(price) {
         taxAmount = Math.ceil(price * 0.05);
     }
     return taxAmount;
+}
+
+function handlePhonePrice(isIncrease) {
+    let inputNumber = getInputNumber('text');
+    if (isIncrease == true) {
+        inputNumber++;
+    }
+    if (isIncrease == false) {
+        if (inputNumber >= 1) {
+            inputNumber--;
+        }
+
+    }
+    document.getElementById('text').value = inputNumber;
+
+
+    let phonePrice = getInputText('iphone');
+    phonePrice = inputNumber * 1219;
+    document.getElementById('iphone').innerText = phonePrice;
+}
+
+function handleCoverPrice(isIncrease) {
+    let inputNumber = getInputNumber('textOne');
+    if (isIncrease == true) {
+        inputNumber++;
+    }
+    if (isIncrease == false) {
+        if (inputNumber >= 1) {
+            inputNumber--;
+        }
+
+    }
+    document.getElementById('textOne').value = inputNumber;
+
+
+    let phonePrice = getInputText('iphoneOne');
+    phonePrice = inputNumber * 59;
+    document.getElementById('iphoneOne').innerText = phonePrice;
 }
