@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Current weather data and Location</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url(images/bg-image.jpg) no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Write Country Code : BD,IN or AF" id="customInput">
+                <div class="input-group-append">
+                    <button id="search" type="button" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+        <div class="weather-status text-white col-md-6">
+            <H4>All About Your Country</H4>
+            <h6 >Name: <span id="name"></span></h6>
+            <h6>Capital: <span  id="capital"></span></h6>
+            <h6 >Flag: <img id="flag" style="width: 30%;height: 20%; margin-left: 5px"></h6>
+
+            <h6 >Population: <span id="population"></span></h6>
+            <h6 >Region: <span id="region"></span></h6>
+            <h6 >Area: <span id="area" class="mr-2"></span>Square Kilometer</h6>
+            
+
+        </div>
+        <div class="col-md-6" style="  background: rgba(236, 240, 241,0.5) ;height: 350px;overflow-y: scroll;position: relative;">
+            <h3>Country List</h3>
+            <ul id="ul"></ul>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

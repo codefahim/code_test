@@ -1,0 +1,48 @@
+body {
+    background-color: #EDD263;
+}
+
+#basic-addon2:hover {
+    cursor: pointer;
+}
+
+.input-group {
+    width: 30%;
+    margin: auto;
+}
+
+.input-group-text {
+    background-color: #3B2D64;
+    border: 1px solid #3B2D64;
+    color: aliceblue;
+}
+
+.col-md-3 {
+    padding-left: 0;
+    padding-right: 0;
+    width: 24%;
+}
+
+.ml-custome {
+    margin-left: 10px;
+}
+
+.w-28 {
+    width: 28%;
+}
+
+.not-found {
+    font-size: 20px;
+    color: orangered;
+    font-weight: bold;
+    text-align: center;
+}
+
+#close {
+    position: absolute;
+    margin-left: 90%;
+}
+
+#close:hover {
+    cursor: pointer;
+}
